@@ -14,6 +14,12 @@ Start your registry:
 
 You can now use it with docker.
 
+Set your insecure registry host in the following configuration file:
+    /etc/docker/daemon.json
+    { "insecure-registries":["10.101.41.249:5000"] }
+    
+    sudo service docker restart
+
 Get any image from the hub and tag it to point to your registry:
 
     docker pull ubuntu && docker tag ubuntu localhost:5000/ubuntu
